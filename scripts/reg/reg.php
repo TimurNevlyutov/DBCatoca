@@ -90,9 +90,9 @@
 		{
 			/*Проверяем существует ли у нас 
 			такой пользователь в БД*/
-			$sql = 'SELECT `login` 
-					FROM `users`
-					WHERE `login` = "'. escape_str($_POST['login']) .'"';
+			$sql = 'SELECT name 
+					FROM users
+					WHERE name = '. escape_str($_POST['login']) .'';
 			$res = mysqlQuery($sql);
 			
 			if(pg_num_rows($res) > 0)

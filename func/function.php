@@ -1,4 +1,5 @@
  <?php
+
 //Ключ защиты
 if(!defined('SEC_KEY'))
   {
