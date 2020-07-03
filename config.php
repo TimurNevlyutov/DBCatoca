@@ -13,13 +13,13 @@
  define('DBPORT',5432);
 
  //Логин БД
- define('DBUSER','catadmin');
+ define('DBUSER','admin');
 
  //Пароль БД
- define('DBPASSWORD','e2f5catdb');
+ define('DBPASSWORD','123');
 
  //БД
- define('DATABASE','');
+ define('DATABASE','db');
 
  //Префикс БД
  define('DBPREFIX','');
@@ -34,5 +34,5 @@
  define('HOST','http://'. $_SERVER['HTTP_HOST'] .'/');
  
  //Адрес почты от кого отправляем
-// define('BEZ_MAIL_AUTOR','Регистрация на http://bezramok-tlt.ru <no-reply@bezramok-tlt.ru>');
+define('MAIL_ADMIN','Регистрация DB CATOCA <timur.nevlyutov@catoca.com>');
  ?>

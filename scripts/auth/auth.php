@@ -19,10 +19,11 @@
         данных для проверки подлиности пользователя*/
         $sql = 'SELECT *
                 FROM users
-                WHERE `login` = "'. escape_str($_POST['login']) .'"
-                AND `status` = 1';
+                WHERE status = 1'
+                ;
         $res = mysqlQuery($sql);
-
+/**'. escape_str($_POST['login']) .'
+        // AND status = 1' **/
         //Если логин совподает, проверяем пароль
         if(pg_num_rows($res) > 0)
         {

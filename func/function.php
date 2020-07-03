@@ -1,16 +1,15 @@
  <?php
-
-  //Ключ защиты
- if(!defined('SEC_KEY'))
- {
+//Ключ защиты
+if(!defined('SEC_KEY'))
+  {
      header("HTTP/1.1 404 Not Found");
      exit(file_get_contents('../404.html'));
- }
+  }
  
- /**Функция экранирования вносимых данных
- *@param array $data
- */
- function escape_str($data)
+/**Функция экранирования вносимых данных
+*@param array $data
+*/
+function escape_str($data)
  {
     if(is_array($data))
     {
@@ -26,15 +25,15 @@
            $result = pg_escape_string($data);
            return $result;
     }
- }
+}
  
- /**Отпровляем сообщение на почту
- * @param string  $to
- * @param string  $from
- * @param string  $title
- * @param string  $message
- */
- function sendMessageMail($to, $from, $title, $message)
+/**Отпровляем сообщение на почту
+* @param string  $to
+* @param string  $from
+* @param string  $title
+* @param string  $message
+*/
+function sendMessageMail($to, $from, $title, $message)
  {
    //Адресат с отправителем
    //$to = $to;
@@ -55,12 +54,12 @@
       return 'Ошибка отправки письма!';  
    else  
       return true;  
- }
+}
  
-  /**функция вывода ошибок
-  * @param array  $data
-  */
- function showErrorMessage($data)
+/**функция вывода ошибок
+* @param array  $data
+*/
+function showErrorMessage($data)
  {
     $err = '<ul>'."\n";	
 	
@@ -75,12 +74,12 @@
 	$err .= '</ul>'."\n";
     
     return $err;
- }
+}
  
-  /**Простая обертка для запросов к MySQL
-  * @param string  $sql
-  */
- function mysqlQuery($sql)
+/**Простая обертка для запросов к MySQL
+* @param string  $sql
+*/
+function mysqlQuery($sql)
  {
 	$res = pg_query($sql);
 	/* Проверяем результат
@@ -93,13 +92,13 @@
 	}
 	
 	return $res;
- }
+}
  
- /**Простой генератор соли
- * @param string  $sql
- */
- function salt()
+/**Простой генератор соли
+* @param string  $sql
+*/
+function salt()
  {
 	$salt = substr(md5(uniqid()), -8);
 	return $salt;
- }
+}

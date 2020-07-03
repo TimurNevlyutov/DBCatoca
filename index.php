@@ -29,7 +29,7 @@
 	//Подключаем скрипт с функциями
 	include './func/function.php';
 
-	//подключаем MySQL
+	//подключаем PGSQL
 	include './bd/bd.php';
 
 	switch($mode)
